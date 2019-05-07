@@ -3,51 +3,58 @@ from operator import itemgetter
 from pprint import pprint
 import sys
 
-# TODO: Get JSON via card URL (needs login via CLI))
-# Or, jook into https://github.com/sarumont/py-trello
-card_filename = sys.argv[1]
 
-with open(card_filename) as f:
-    card = json.load(f)
+def main():
+    # TODO: Use argparse
+    # TODO: Get JSON via card URL (needs login via CLI))
+    # Or, jook into https://github.com/sarumont/py-trello
+    card_filename = sys.argv[1]
 
-print(f"# {card['name']}")
+    with open(card_filename) as f:
+        card = json.load(f)
 
-if card['due']:
-    print(f"\n**Due:** {card['due'][:10]}")
+    print(f"# {card['name']}")
 
-if card['desc']:
-    print(f"\n{card['desc']}")
+    if card['due']:
+        print(f"\n**Due:** {card['due'][:10]}")
 
-for checklist in card['checklists']:
-    print(f"\n## {checklist['name']}\n")
-    for item in sorted(checklist['checkItems'], key=itemgetter('pos')):
-        print(f"- [{'x' if item['state'] == 'complete' else ' '}] {item['name']}")
+    if card['desc']:
+        print(f"\n{card['desc']}")
 
-deleted_attachment_ids = {
-    x['data']['attachment']['id'] for x in card['actions']
-    if x['type'] == 'deleteAttachmentFromCard'
-}
+    for checklist in card['checklists']:
+        print(f"\n## {checklist['name']}\n")
+        for item in sorted(checklist['checkItems'], key=itemgetter('pos')):
+            print(f"- [{'x' if item['state'] == 'complete' else ' '}] {item['name']}")
 
-attachments = [
-    x['data']['attachment'] for x in card['actions']
-    if x['type'] == 'addAttachmentToCard'
-    and x['data']['attachment']['id'] not in deleted_attachment_ids
-]
+    deleted_attachment_ids = {
+        x['data']['attachment']['id'] for x in card['actions']
+        if x['type'] == 'deleteAttachmentFromCard'
+    }
 
-if attachments:
-    print('\n## Attachments\n')
+    attachments = [
+        x['data']['attachment'] for x in card['actions']
+        if x['type'] == 'addAttachmentToCard'
+        and x['data']['attachment']['id'] not in deleted_attachment_ids
+    ]
 
-for attachment in attachments:
-    if attachment['name'] == attachment['url']:
-        print(f"- <{attachment['url']}>")
-    else:
-        print(f"- [{attachment['name']}]({attachment['url']})")
+    if attachments:
+        print('\n## Attachments\n')
 
-comments = [
-    x for x in card['actions']
-    if x['type'] == 'commentCard'
-]
+    for attachment in attachments:
+        if attachment['name'] == attachment['url']:
+            print(f"- <{attachment['url']}>")
+        else:
+            print(f"- [{attachment['name']}]({attachment['url']})")
 
-for comment in comments:
-    print(f"\n## Comment from {comment['memberCreator']['fullName']} on {comment['date'][:10]}\n")
-    print(comment['data']['text'])
+    comments = [
+        x for x in card['actions']
+        if x['type'] == 'commentCard'
+    ]
+
+    for comment in comments:
+        print(f"\n## Comment from {comment['memberCreator']['fullName']} on {comment['date'][:10]}\n")
+        print(comment['data']['text'])
+
+
+if __name__ == '__main__':
+    main()
