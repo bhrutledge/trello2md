@@ -1,13 +1,20 @@
+"""
+Transform Trello JSON exports to Markdown
+
+TODO:
+
+- Move card printing to dedicated function
+- Stub logic for writing board/list
+- Generate safe filename from board/list/card/ title
+- Look into https://github.com/sarumont/py-trello
+- Use argparse
+"""
 import json
 from operator import itemgetter
 from pprint import pprint
 import sys
 
-
 def main():
-    # TODO: Use argparse
-    # TODO: Get JSON via card URL (needs login via CLI))
-    # Or, jook into https://github.com/sarumont/py-trello
     card_filename = sys.argv[1]
 
     with open(card_filename) as f:
@@ -57,4 +64,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
