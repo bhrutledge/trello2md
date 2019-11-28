@@ -34,3 +34,30 @@ Sample description
 Sample comment
 
 ```
+
+## Developing
+
+- [Fork and clone](https://help.github.com/en/articles/fork-a-repo) this repository
+
+- Create and activate a [virtual environment](https://docs.python.org/3/tutorial/venv.html)
+
+    ```
+    $ cd trello2md
+
+    $ python3 -m venv venv
+
+    $ source venv/bin/activate
+    ```
+
+- Install this package and its dependencies for development
+
+    ```
+    $ pip install -e .[dev]
+    ```
+
+    This will install:
+
+    - [mypy](https://mypy.readthedocs.io/en/latest/) to check types
+    - [black](https://black.readthedocs.io/en/stable/) to format the code
+    - [flake8](http://flake8.pycqa.org/en/latest/) to identify coding errors and check code style
+    - [pydocstyle](http://www.pydocstyle.org/en/latest/) to check docstring style

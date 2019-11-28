@@ -1,20 +1,22 @@
 """
-Transform Trello JSON exports to Markdown
+Transform Trello JSON exports to Markdown.
 
 TODO:
-
 - Move card printing to dedicated function
 - Stub logic for writing board/list
 - Generate safe filename from board/list/card/ title
 - Look into https://github.com/sarumont/py-trello
 - Use argparse
+
 """
 import json
-from operator import itemgetter
-from pprint import pprint
 import sys
+from operator import itemgetter
+from typing import Optional
 
-def main():
+
+def main() -> Optional[int]:
+    """Print Markdown for a Trello Card JSON export."""
     card_filename = sys.argv[1]
 
     with open(card_filename) as f:
@@ -22,46 +24,51 @@ def main():
 
     print(f"# {card['name']}")
 
-    if card['due']:
+    if card["due"]:
         print(f"\n**Due:** {card['due'][:10]}")
 
-    if card['desc']:
+    if card["desc"]:
         print(f"\n{card['desc']}")
 
-    for checklist in card['checklists']:
+    for checklist in card["checklists"]:
         print(f"\n## {checklist['name']}\n")
-        for item in sorted(checklist['checkItems'], key=itemgetter('pos')):
+        for item in sorted(checklist["checkItems"], key=itemgetter("pos")):
             print(f"- [{'x' if item['state'] == 'complete' else ' '}] {item['name']}")
 
     deleted_attachment_ids = {
-        x['data']['attachment']['id'] for x in card['actions']
-        if x['type'] == 'deleteAttachmentFromCard'
+        x["data"]["attachment"]["id"]
+        for x in card["actions"]
+        if x["type"] == "deleteAttachmentFromCard"
     }
 
     attachments = [
-        x['data']['attachment'] for x in card['actions']
-        if x['type'] == 'addAttachmentToCard'
-        and x['data']['attachment']['id'] not in deleted_attachment_ids
+        x["data"]["attachment"]
+        for x in card["actions"]
+        if x["type"] == "addAttachmentToCard"
+        and x["data"]["attachment"]["id"] not in deleted_attachment_ids
     ]
 
     if attachments:
-        print('\n## Attachments\n')
+        print("\n## Attachments\n")
 
     for attachment in attachments:
-        if attachment['name'] == attachment['url']:
+        if attachment["name"] == attachment["url"]:
             print(f"- <{attachment['url']}>")
         else:
             print(f"- [{attachment['name']}]({attachment['url']})")
 
-    comments = [
-        x for x in card['actions']
-        if x['type'] == 'commentCard'
-    ]
+    comments = [x for x in card["actions"] if x["type"] == "commentCard"]
 
     for comment in comments:
-        print(f"\n## Comment from {comment['memberCreator']['fullName']} on {comment['date'][:10]}\n")
-        print(comment['data']['text'])
+        print(
+            "\n## Comment from"
+            f" {comment['memberCreator']['fullName']}"
+            f" on {comment['date'][:10]}\n"
+        )
+        print(comment["data"]["text"])
+
+    return None
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())
