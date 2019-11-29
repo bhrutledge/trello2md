@@ -2,27 +2,34 @@
 Transform Trello JSON exports to Markdown.
 
 TODO:
-- Move card printing to dedicated function
 - Stub logic for writing board/list
 - Generate safe filename from board/list/card title
+- Write card to file
 - Implement board/list writing
 - Look into https://github.com/sarumont/py-trello
 - Use argparse
-
 """
 import json
 import sys
 from operator import itemgetter
-from typing import Optional
+from typing import Any, Dict, Optional
 
 
 def main() -> Optional[int]:
+    """Print Markdown for a Trello JSON export."""
+    filename = sys.argv[1]
+
+    with open(filename) as f:
+        export = json.load(f)
+
+    if "/c/" in export["shortUrl"]:
+        write_card(export)
+
+    return None
+
+
+def write_card(card: Dict[str, Any]) -> None:
     """Print Markdown for a Trello Card JSON export."""
-    card_filename = sys.argv[1]
-
-    with open(card_filename) as f:
-        card = json.load(f)
-
     print(f"# {card['name']}")
 
     if card["due"]:
@@ -67,8 +74,6 @@ def main() -> Optional[int]:
             f" on {comment['date'][:10]}\n"
         )
         print(comment["data"]["text"])
-
-    return None
 
 
 if __name__ == "__main__":
