@@ -2,7 +2,6 @@
 Transform Trello JSON exports to Markdown.
 
 TODO:
-- Add test for sample-card.json
 - Move card printing to dedicated function
 - Stub logic for writing board/list
 - Generate safe filename from board/list/card title

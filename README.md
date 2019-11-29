@@ -57,6 +57,7 @@ Sample comment
 
     This will install:
 
+    - [pytest](https://docs.pytest.org/en/latest/) for writing and running tests
     - [mypy](https://mypy.readthedocs.io/en/latest/) to check types
     - [black](https://black.readthedocs.io/en/stable/) to format the code
     - [flake8](http://flake8.pycqa.org/en/latest/) to identify coding errors and check code style
