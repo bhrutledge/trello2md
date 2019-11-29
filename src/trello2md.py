@@ -22,14 +22,29 @@ def main() -> Optional[int]:
     with open(filename) as f:
         export = json.load(f)
 
-    if "/c/" in export["shortUrl"]:
+    if "/b/" in export["shortUrl"]:
+        write_board(export)
+    elif "/c/" in export["shortUrl"]:
         write_card(export)
 
     return None
 
 
+def write_board(board: Dict[str, Any]) -> None:
+    """Write Markdown for a Trello Board JSON export."""
+    print("Lists:")
+    for lst in board["lists"]:
+        print(lst["name"])
+
+    print()
+
+    print("Cards:")
+    for card in board["cards"]:
+        print(card["name"])
+
+
 def write_card(card: Dict[str, Any]) -> None:
-    """Print Markdown for a Trello Card JSON export."""
+    """Write Markdown for a Trello Card JSON export."""
     print(f"# {card['name']}")
 
     if card["due"]:
