@@ -2,16 +2,27 @@
 import pathlib
 import sys
 
+import pytest
+
 import trello2md
 
 
-def test_sample_card(monkeypatch, capsys):
+@pytest.mark.parametrize(
+    "card_path",
+    [
+        "sample-card.json",
+        pytest.param(
+            "copied-card.json", marks=pytest.mark.xfail(reason="not supported"),
+        ),
+    ],
+)
+def test_write_card(card_path, monkeypatch, capsys):
     testdir = pathlib.Path(__file__).parent.resolve()
-    monkeypatch.setattr(sys, "argv", [trello2md.__file__, testdir / "sample-card.json"])
+    monkeypatch.setattr(sys, "argv", [trello2md.__file__, testdir / card_path])
 
     trello2md.main()
 
-    with open(testdir / "sample-card.md") as f:
+    with open(testdir / card_path.replace(".json", ".md")) as f:
         sample_card = f.read()
 
     captured = capsys.readouterr()

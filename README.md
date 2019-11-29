@@ -2,6 +2,8 @@
 
 A simple script to transform Trello card JSON to Markdown, currently tailored to my note-taking workflow.
 
+**NOTE**: This does not work for comments and attachments on copied cards. It could support comments, but attachments aren't in the JSON of a copied card.
+
 ## Usage
 
 Install on your path with [pipx](https://github.com/pipxproject/pipx):
