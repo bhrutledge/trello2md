@@ -1,64 +1,147 @@
 """
-Transform Trello JSON exports to Markdown.
+Export Trello boards and cards to Markdown.
 
 TODO:
-- Stub logic for writing board/list
-- Generate safe filename from board/list/card title
-- Implement board/list writing
-- Look into https://github.com/sarumont/py-trello
+- Show due, labels, members in list
+- Save credentials to a file
+- Reconsider print partial
 - Use argparse
+- Option to remove existing board directory
+- Download attachments?
 """
-import json
+import builtins
+import os
+import re
 import sys
-from operator import itemgetter
-from typing import Optional
+from contextlib import contextmanager
+from functools import partial
+from getpass import getpass
+from typing import IO, Iterator, Optional
+
+import trello
+import trello.util
 
 
 def main() -> Optional[int]:
-    """Print Markdown for a Trello Card JSON export."""
-    card_filename = sys.argv[1]
+    """Print Markdown for a Trello object."""
+    arg = sys.argv[1]
 
-    with open(card_filename) as f:
-        card = json.load(f)
+    if arg == "auth":
+        get_authorization()
+        return None
 
-    print(f"# {card['name']}")
+    client = trello.TrelloClient(
+        api_key=os.environ["TRELLO_API_KEY"], token=os.environ["TRELLO2MD_TOKEN"],
+    )
 
-    if card["due"]:
-        print(f"\n**Due:** {card['due'][:10]}")
+    url_match = re.search(r"trello\.com/([bc])/([\w]*)", arg)
+    if not url_match:
+        return None
 
-    if card["desc"]:
-        print(f"\n{card['desc']}")
+    object_type, object_id = url_match.group(1, 2)
 
-    for checklist in card["checklists"]:
-        print(f"\n## {checklist['name']}\n")
-        for item in sorted(checklist["checkItems"], key=itemgetter("pos")):
-            print(f"- [{'x' if item['state'] == 'complete' else ' '}] {item['name']}")
+    if object_type == "b":
+        board = client.get_board(object_id)
+        with open_board(board) as file:
+            write_board(board, file)
+    else:
+        card = client.get_card(object_id)
+        write_card(card)
 
-    deleted_attachment_ids = {
-        x["data"]["attachment"]["id"]
-        for x in card["actions"]
-        if x["type"] == "deleteAttachmentFromCard"
-    }
+    return None
 
-    attachments = [
-        x["data"]["attachment"]
-        for x in card["actions"]
-        if x["type"] == "addAttachmentToCard"
-        and x["data"]["attachment"]["id"] not in deleted_attachment_ids
-    ]
 
-    if attachments:
+def get_authorization() -> None:
+    """Prompt for and generate API credentials."""
+    print("Go to the following link in your browser:")
+    print("https://trello.com/app-key")
+    print()
+
+    api_key = input("Enter your API key: ")
+    api_secret = getpass("Enter your API secret: ")
+    print()
+
+    access_token = trello.util.create_oauth_token(
+        expiration="never", key=api_key, secret=api_secret, name=__name__, output=False
+    )
+
+    print()
+    print("Set these environment variables:")
+    print(f"TRELLO_API_KEY={api_key}")
+    print(f"TRELLO2MD_TOKEN={access_token['oauth_token']}")
+
+
+@contextmanager
+def open_board(board: trello.Board) -> Iterator[IO[str]]:
+    """Yield an open file in a new directory for a Trello board."""
+    dirname = get_filename(get_slug(board.url))
+    os.mkdir(dirname)
+    os.chdir(dirname)
+    filename = "index.md"
+    print(f"{board.name:30.30} -> {os.path.join(dirname, filename)}")
+    with open(filename, "w") as file:
+        yield file
+
+
+def write_board(board: trello.Board, file: IO[str] = sys.stdout) -> None:
+    """Print Markdown for a Trello board."""
+    print = partial(builtins.print, file=file)
+
+    print(f"# {board.name}")
+
+    for lst in board.open_lists():
+        print(f"\n## {lst.name}")
+
+        cards = lst.list_cards()
+        if cards:
+            print()
+
+        for card in cards:
+            with open_card(card) as file:
+                write_card(card, file=file)
+                print(f"- [{card.name}]({file.name})")
+
+
+@contextmanager
+def open_card(card: trello.Card) -> Iterator[IO[str]]:
+    """Yield an open file for a Trello card."""
+    filename = get_filename(get_slug(card.url), ".md")
+    print(f"{card.name:30.30} -> {filename}")
+    with open(filename, "w") as file:
+        yield file
+
+
+def write_card(card: trello.Card, file: IO[str] = sys.stdout) -> Optional[str]:
+    """Print Markdown for a Trello card."""
+    print = partial(builtins.print, file=file)
+
+    print(f"# {card.name}")
+
+    if card.due:
+        print(f"\n**Due:** {card.due[:10]}")
+
+    if card.description:
+        print(f"\n{card.description}")
+
+    for checklist in card.checklists:
+        print(f"\n## {checklist.name}")
+
+        if checklist.items:
+            print()
+
+        for item in checklist.items:
+            print(f"- [{'x' if item['checked'] else ' '}] {item['name']}")
+
+    if card.attachments:
         print("\n## Attachments\n")
 
-    for attachment in attachments:
+    for attachment in card.attachments:
         if attachment["name"] == attachment["url"]:
             print(f"- <{attachment['url']}>")
         else:
             print(f"- [{attachment['name']}]({attachment['url']})")
 
-    comments = [x for x in card["actions"] if x["type"] == "commentCard"]
-
-    for comment in comments:
+    for comment in card.comments:
         print(
             "\n## Comment from"
             f" {comment['memberCreator']['fullName']}"
@@ -67,6 +150,27 @@ def main() -> Optional[int]:
         print(comment["data"]["text"])
 
     return None
+
+
+def get_slug(url: str) -> str:
+    """Return a slug derived from a Trello object URL."""
+    match = re.search(r"trello\.com.*/[\d-]*(.*)$", url)
+    if match is None:
+        raise ValueError(f"Invalid URL: {url}")
+
+    return match.group(1)
+
+
+def get_filename(slug: str, ext: str = "") -> str:
+    """Return a unique filename."""
+    i = 0
+    filename = slug + ext
+
+    while os.path.exists(filename):
+        i += 1
+        filename = f"{slug}-{i}" + ext
+
+    return filename
 
 
 if __name__ == "__main__":

@@ -1,10 +1,8 @@
 # trello2md
 
-A simple script to transform Trello card JSON to Markdown, currently tailored to my note-taking workflow.
+Export Trello boards and cards to Markdown. Currently tailored to my note-taking workflow.
 
-**NOTE**: This does not work for comments and attachments on copied cards. It could support comments, but attachments aren't in the JSON of a copied card.
-
-## Usage
+## Installation
 
 Install on your path with [pipx](https://github.com/pipxproject/pipx):
 
@@ -12,10 +10,51 @@ Install on your path with [pipx](https://github.com/pipxproject/pipx):
 $ pipx install trello2md
 ```
 
-Follow [Trello's instructions to download JSON for a card](https://help.trello.com/article/747-exporting-data-from-trello-1), then:
+Authorize use of the Trello API:
 
 ```
-$ trello2md sample-card.json
+$ trello2md auth
+```
+
+## Exporting a Trello board
+
+Run with the URL for a Trello board as the only argument to write Markdown files to a directory. For example:
+
+```
+$ trello2md https://trello.com/b/WODq2cwg/sample-board
+
+$ tree sample-board/
+sample-board/
+├── another-card-1.md
+├── another-card-2.md
+├── another-card.md
+├── copied-card.md
+├── index.md
+└── sample-card.md
+
+$ cat sample-board/index.md
+# {Sample Board}
+
+## Sample List
+
+- [Sample Card](sample-card.md)
+- [Copied Card](copied-card.md)
+
+## Empty List
+
+## Another List
+
+- [Another Card](another-card.md)
+- [Another Card](another-card-1.md)
+- [Another Card](another-card-2.md)
+```
+
+## Exporting a Trello card
+
+Run with the URL for a Trello card as the only argument to print Markdown. For example:
+
+```
+$ trello2md https://trello.com/c/HGYGb5iM/2-sample-card
 # Sample Card
 
 **Due:** 2019-05-07
