@@ -83,9 +83,9 @@ def open_board(board: trello.Board) -> Iterator[IO[str]]:
         yield file
 
 
-def write_board(board: trello.Board, file: IO[str] = sys.stdout) -> None:
+def write_board(board: trello.Board, file: Optional[IO[str]] = None) -> None:
     """Print Markdown for a Trello board."""
-    print = partial(builtins.print, file=file)
+    print = partial(builtins.print, file=file if file else sys.stdout)
 
     print(f"# {board.name}")
 
@@ -111,9 +111,9 @@ def open_card(card: trello.Card) -> Iterator[IO[str]]:
         yield file
 
 
-def write_card(card: trello.Card, file: IO[str] = sys.stdout) -> Optional[str]:
+def write_card(card: trello.Card, file: Optional[IO[str]] = None) -> Optional[str]:
     """Print Markdown for a Trello card."""
-    print = partial(builtins.print, file=file)
+    print = partial(builtins.print, file=file if file else sys.stdout)
 
     print(f"# {card.name}")
 

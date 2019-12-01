@@ -59,10 +59,4 @@ def test_write_card(url, md_filename, monkeypatch, capsys):
         sample_card = f.read()
 
     captured = capsys.readouterr()
-
-    with pytest.raises(AssertionError, match=r"assert '' =="):
-        assert captured.out == sample_card
-    pytest.xfail(
-        "Overriding `print` in `write_card` breaks capsys: "
-        "https://github.com/pytest-dev/pytest/issues/6299"
-    )
+    assert captured.out == sample_card
