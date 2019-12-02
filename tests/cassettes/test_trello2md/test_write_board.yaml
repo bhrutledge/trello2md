@@ -1,0 +1,2007 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/boards/WODq2cwg
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4VTXW/bMAz8K4P2ms1GinSI3+Z2BToUa4Fm27NsMY4QSvIo2UUX5L+PtJ052YDt
+        jTjeiccPHZQ1qlCr2uTX+TqHvLrWVytjrlbLpdmu1UJ57YAZh2ftWoQ3ZdBkjowbiDXjU3Srk1aF
+        7xAXqsYQgV/daoyw4AKP1Ghvf+pkgz+RrPnkE1BLNvLzo7C13p8JO0IusEupjUWWJQLE8L4OLquy
+        74+3P5b1S5PFwdW7SlyxlbgLlL7+X8fUlmAbVXFQLZCzMbK3B+hBSrKpXidg0s4a+BYSMHHqpg/J
+        +oZJxkZdIdvlhoNz4BOTlANXAUUGre9tGlq+xCPg9nOwPIjpxZqt34ReVEWiTiYWN8DDFgvnpI/N
+        WJmg6VCTFNYI3mi6A+BxjnZOikrX+4ZC52W/FXbSzozdO938nvsf8LM8y6pxKXNyY3E2NMMl2WaX
+        PETpk83sLwrdBAzEibd5/mFd3l3kypBScP9ibEL7d7rWvoSnrkLLBzhObIDOD+oM5uu7oD1N252l
+        97Iqbk1Ex4VCXQF+4bPnhg6qIQBelhz6q1zgyxgH0l4mKDjJtCRoO+I/MsbDyAs1fZsHeZMZcf86
+        ptEO30pE1u9PEt6ZhMfjL4HvMLuYAwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '480'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:39 GMT
+      ETag:
+      - W/"398-GkXBJtjYrljWktGOlC+IQY/U2L0"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=4dd68d6323eba3d04d9fa9a46324130c15b84171f327adbb3d679b9b4c740714; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:39 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '299'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '99'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '199'
+      X-Server-Time:
+      - '1575283539469'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/boards/5cd06090e0b6a35dd3522df9/lists?cards=none&filter=open
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA6XOP0sEMRCH4a8iqbeY/F2znQd211mKxSQzwUB2s2xyhYjf3VjIXSleO/zm5Xn9
+        FJnEImwkcOCdN9YnAAwyYAzoxSQ2XHksXnDdCz+cc+vjGEttPB4TlsbTaJwqHjchYAgOtSXSVilK
+        P6G9NrE4a7WdRLuEFo8cbhqtpn7Oa+5i2S6lfE2/NGKpjEIzmmQhcqLIeqYr7Xnd+8fdMv+oQf9D
+        Jl0yPqKanZeI0Rq4yp622t/5uNsmtYRZ/gn39g1rtgTl0wEAAA==
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:39 GMT
+      ETag:
+      - W/"1d3-3WKYRBm9Gn1WRsIsyV7gtd7tJjM"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=d4bcc43bad5ade1c7caf3a164bbd6f1e5f87458ddcb4ff5c7036bb25387080c9; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:39 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '298'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '98'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '198'
+      X-Server-Time:
+      - '1575283539611'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/lists/5cd060969459f00ab1bacba9/cards?filter=open&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA82VTW/cNhCG/0rA836QlKivW7xFkxbOpXYCNIYP/NIuY0pcSJQL2/B/75BareVs
+        EzttDwH2wJXI4cw7z7y6ekBGoQoxqXCepYxKksoizTMmCpFxjRZI7rS8+c3r5sJzr3tUtYO18Ni6
+        XsPRmtteL5CCd+e892+lN7fG30FMikm5JHSJySVhFaEVzVcFpp8hptK9hB0XvNlb/Sb868zeG9ce
+        3v3CPUfVA9KN+2Jg8fgIZwb9h25Mq3SHKpKmeAGpnzneTflnuMQaQ9YJUyphlKq6hHhGnZveH2qE
+        PVmZsrLGmAsiuBR83PNBN0J3/SfnQ1FX1+Hcxc51cJCG9Vvvudw1uvUbdxsyGFWA4FxoC6pcRQ1D
+        DiVRWFKlJOM6y3UBOQR5T1/VFME9DW8HbmPUp0uOura80U9KbUK1C7R3cGHGWMJWbIH6kOa5aW9g
+        3/t3f74TzHwIdfeXGuSFvhyDCa62oYMPiB/L6c/uLu/2sOcB+U5b68JKjLKCxDLqi0MDrJM89mjq
+        +S2IBdFg163Rf5l2O4p40PAARj+I0F0RZPXdEFAZ9MaFxs8yg2eQfSQGsyXOL0lWYQy/FcZ4ImZi
+        5BBnVgMAAam6JvQHMgp/Jmr7TViF2589jW2t3VYM23u4GY2A/XheRsX4FhCDi0cIYHpwKTjBZarq
+        NK95WrLQaaMOlMWNVGWCcC7TkktGSFanNSdFRMJOTM2m8xSfSNarRuAAEUAhnXUAL9p2WrdQ9Hcv
+        AD5D0q+YseeUxpGYXSYsdPcRBIikfuwsJLDzft9X6/XI3Ap6t5brGb2n2Awvn1vTZR8tZRmxDeXG
+        WQ1Vzmfr4GCjFtMgf9xbx5VWZ1zebDs3tIDM+K4394HO1nUNt1CX6Mx251vdQ8eRDeuAjxx675pf
+        jbYquGWg4fpJYKUBB87zLE+TgiSsgFlM8v/BX8kywWFaSF7RbIXT47RAbi/461jdM1+dxHhFz/+z
+        r4J1zdvyLV8Fbl5lkRu3N1q9mVskSQjOYeznDlna3fmn3++TgPbP6pAzX5o7WfSsbxjb0fvga/XM
+        GOH//Pv65MHAx/f89sSkAfF/5dwnDvmPowDGB59JpWnJkpIyShJF60wwWeRF+rV5AhJHi4T1S7Yy
+        a/kP2cp0bs2WMsL109jK9d/F/NV7uAkAAA==
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '880'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:39 GMT
+      ETag:
+      - W/"9b8-MO2QU3q1qkL+C3vrHXU1/gLhY4E"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=85051e0a97f5ccb120edf50a7c0f30ae989dd74ea3b2b83ac0b5d11467c8cad1; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:39 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '297'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '97'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '197'
+      X-Server-Time:
+      - '1575283539757'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5cd076452c14c84765b8b6ae?badges=False&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA5VUyW7bMBD9lYJnLyQtypZuiYumBZxL4xRogx6Gi2Q2lGhIlIsk8L93KCmOixRt
+        CuhAkbO8eW9mnojVJCdCabpME8EVS9QqWaZCrmQKhkyIBF2aluRPBEIAtatMHdrLh+3D3sTL0Bjn
+        fDxJDw3GohOihsPxOCHOKwjW1yQvwLVmQg4+xGhodbDmp63La1NJ03zBa3QejdpOtqqxMl6FpkO3
+        wpeyKx8RKkJSO6PuPwVTYSB+/ruOD9GJ4a2veqj9zxn0/l+bGH8/IBsy6A7rIZyybErFlC63LM0p
+        xW9GKf2GWdFg7au9MwENe6BY3wnKTYC+sLsnZLTHEQGeqBWcc1hwDA8pZwsqVhixjT5oglCHsMfv
+        GNH59oyK11kRCbptoA0XKtiDDQ/PuBmfUrZlImc858vZivIeN9aKFjcQk7w7rxwj4dt7CBD1M5X/
+        YfEQZXsLGZ9NZWttGiQ0SVBPU4F1JK875ybIweXQDn1rpTSjhmJDLYTWC+RCFxnWPxLlbBtQybux
+        CwXNJDCaJbpIlgUkmSCRlq4NvvpgjdOj8nd4a/UGnUeWMUuaJSIrKAXJJCgJQ5ahxYYUXKeSAagk
+        AyUYS4ukALbiMYXVo+HYjEOCm51vMAP2mdUXpwlY+0OsfCjWgTQuho/av4ChGdNUca2VAJMuTZT8
+        TbzUUMW2QHPlncc0pGyMqclx8tcEBf/PBGNLbCL8s2TS4SjEVkR2nys7yfiHmuLyiAr//oRoMEQF
+        dQeuZ+uFvNOcj4WOONZxbUzI3iOVqRALMRM4I5H+ja3vkYWPV1+vpLDXaNRf3zbYb2QXwr7N5/Nh
+        E81wmOZqfm76apl0//ab82nbD8y0X2ZRiV7wKMB5IUMDjDI9t/7t3nnQRl+Cui8b39XYFMNbax+j
+        srVvKoiUy8aWu1CbFksmLp5RZGLbrcFh7ZfDsGh+AbjQvHGnBQAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '723'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:39 GMT
+      ETag:
+      - W/"5a7-5a214WVUHf3tBuJwMEJooG+QLxw"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=0d27ad4b6c8ed6ea8e573cdc5f942a2ea7b32d4b487754deb27dd1357e63bb7b; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:39 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '296'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '96'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '196'
+      X-Server-Time:
+      - '1575283539918'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5cd076452c14c84765b8b6ae/checklists
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA52QvW7DMAyEX6XQ7EGiRP14bLrkGYIMtCSjQv0T1OpU+N1DB0k8NUM34niH+8jT
+        ryhJtAJjks6iDB0pGUzqjevJBBSNmGjM7Dh85vg1lKWyVNL7TN+PnJVBZtlZ0piSRoDUh5vpsHuc
+        NQhRmegN13Se3Zk9l3kRrbLam0bEreBY88jSacPaG1/yLZXqBhjn8TJkHje+/SQAIA0gFVlQWqLn
+        /eOkeyK9Fa696x9USbTTzzA88Rz6tfkHUZn+YHJgg0fLTJI0+Wh3puMz8xJK88twPa/nK6fG7LDB
+        AQAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '231'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:40 GMT
+      ETag:
+      - W/"1c1-IbifcDSai5AcUUxMZc/3uotjt4k"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=b9bc3a46f3adcd1d406ed553bb3e3271a9f478ea9bc28f3e51244403fabcbea3; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:40 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '299'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '99'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '199'
+      X-Server-Time:
+      - '1575283540052'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5cd076452c14c84765b8b6ae/attachments?filter=false
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAzXOTU/DMAwG4L+CfO62uGvSLlfEcbdxYdrBTdwRkTRR2w0mxH/HFeLmj8fye/6G
+        4MGCdl61xrSacN+ahrnTynlWUEH/WHgGO95irMDTwsJrhYeN0htlTthZhRZx2+r6TTj7Kz/nmKf/
+        k+CPnHqWHnTtTY9ErjmQ04hmaAbCrpazML+WmEmyDBRnriCFxKdHWb/JeqS0Vi9flErkpxjGD5mW
+        ie+BPyXd+VLBbYpC3pelzHa34z+6dTmtMgtCs++an8svppC5IvQAAAA=
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '212'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:40 GMT
+      ETag:
+      - W/"f4-jJwf9LR0iZC+VVeBqRFRO/rIuHs"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=40568e504a33648a77c643b4f9d8d07105941b7cc2ed7cffc1fd1597c64a675d; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:40 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '298'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '98'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '198'
+      X-Server-Time:
+      - '1575283540192'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5cd076452c14c84765b8b6ae/actions?filter=commentCard%2CcopyCommentCard
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA41Sy27bMBD8lYBnP0iJlCXd7BSID0kbOC2KtuhhSVExYYpyKMpuGvjfu5TttC5a
+        IBcJu5yZfc23F2IqUhKhKjqbpSmv81qrHL8ViFQVZITvd7qR2l97DaH1EZxUmWQAihegBGNZzWtg
+        eYLgCgKQ8oVY04X4d9BoZDxAs7X66jZmo+KpYkaLrOCiqCkFySQoCQU5jIhswSPmhXTr1odb4zZI
+        +Pzh3VOi9o8ocKm6GNCXslRTmUEqqioVSVLVg6z6h+ry5suNFOZuaOshliNl8neF60j8o8As4yJR
+        jKuczzIhcyylY99B/0D6eVrVNo12YXh43sY1nDInOdxVTCaUFWMqxjT7yPKS8jIVk1nGvmJBaxoT
+        urgI3L0KpnVDsNV+PkTDigKEHtOk3SCjMh1Iq+fYBqOUjsgevItRQSk22Dvz1Ov7t/Fnv9ksOxyQ
+        3lwa4eyd/9shNr0z4XlhW7XReNIabKdHBHboE7+Ebo2NA+NZmmpeMJqqPFVVXUshGZei4nmRKRzr
+        iP/kLcLXIWy7cjoNXlvbjo9P3aRLJ9DAz9bBvpvgoqdvkK17a98fHbrwBtzVqg9WV496OPbR9itd
+        a+81+t4hGk3gTDA4BXayWK4Q6Fp330trFF4Dd/QazndgbDzG69R9p/3JunLtz6UOh++/ABTxceqG
+        AwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '516'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:40 GMT
+      ETag:
+      - W/"386-iAIUUoxdMXZzwN1jOsRArP0CZ84"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=55d9cb179b09547f25b3b7cc701c8bd96430cb9ea8192c64a6656d43c0f3e81a; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:40 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '297'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '97'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '197'
+      X-Server-Time:
+      - '1575283540367'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de109aa7674381358bad37e?badges=False&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4VTTW/iMBD9K5XPUJyEJCS3ltVKu2IvS9tD0R7GH4BVJ45ih1Wp+O87toFGqtBK
+        HOzJm+f3hjcfRAlSk1zIhFYAZVHOs0WS5QsGIislmRA87KQl9QcB54DvG9k6+/j+9N5JX3S91Nr4
+        EzPQIxedEB4Pp9OEaMPBKdOSegvaygk5GOfZEHVQ8q9qd79kw2T/gmVsPoPswCzvFfMl1w/YtjU7
+        NuyOKBUl8b3kbz+cbJAoHV+X/oNvSrBqmiA1QEbSw11Iz99FZfEFMaAfktKkmtJ8SsunpKgpxd89
+        pfQVX0XA0jSdlg6BQSj6u0pZOwjGNh840aDDC7w52kWGjNb3IASlRtrTH2TUxo5G8fVVVIJtK7Du
+        gTt1UO79ojtJphn1upOyTot7Oo+60Ssi1uAfuRs7Ryb89g0ckLodtA4eL2Q3h/BbNqoVsr/0yAaU
+        vlyUeIwxIDkXtKAVlZQVkOVCZHmaim2Fvs8D0so6/Ac3N9K3SBGKwUyrPKvSPE0ykW4LlvNFuZgT
+        P6nBOtN8V1KLcxg2WFVihbzo4iygqOZ5taUUWMKAM4gCYur866HlfD2nMNbWe9MjT+4pH67RX5rD
+        p3UNTOoryWp0a6AdQAfwZ+813y00/n9fmk5Jcbf06zIhnUGmJEtoiem1/vGVat8QVun96uXnMSTG
+        l597HDfZO9fZejaLC3iPGZrx2Rj6ZYeG//fN8ikPoqZhh/0WBbs+1GMfMS3caHONgRLPnTYgpHgE
+        /rbrzdDiIkagVUfvtzV9Axqtsl7t9q6VFh0T7c/khGO2TxIzGnYi7tc/IjyNQp4EAAA=
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:40 GMT
+      ETag:
+      - W/"49e-YESyOKR6xHHaARj8cWaDzGL4Fww"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=eebcea6ff93cb27baef0c27cb47264628c24bb213bc1fde515f8c321e884d4b2; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:40 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '296'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '96'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '196'
+      X-Server-Time:
+      - '1575283540542'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de109aa7674381358bad37e/checklists
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA62Ru27DMAxFfyXQ7EEWrZfHph3yDYEHWlRQoX6hVoei8L9HTpy4KJKgKLoJ1L28
+        h+T+iwViJZPkc24RtdIFmBykqZHACJaxDlufFNtX796aMMZUCvTU4/vJ54grbrnntUKQRCCFoIM9
+        ibaL5mZv7ZNm6EdW5gpMkTE3B+yib1NpP2OtiQ/5xohxBnR9OzQ+PWe++yNB+r+MtDhoE1LsUn/G
+        iKzsPprmiqelmbI/EIXul0zFyrS7eh5CQVqZnKoz1nlYYSVYIUUOJA6qls5o863xSzvEz8260/++
+        IgitzI8rVlN1BJgwcmhhAgAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '246'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:40 GMT
+      ETag:
+      - W/"261-qQTGcmZbglfSJqxew1lMB6/Dp2w"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=29ec670cf26b5b980654cd5545e4288a9ae2493b804667b14af27de4bdf47be8; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:40 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '295'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '95'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '195'
+      X-Server-Time:
+      - '1575283540703'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de109aa7674381358bad37e/attachments?filter=false
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA62Su1LDMBBF/0W1Y2sl6+WWmg4aMinW0hrMyI+xFSAw+XcUEmagABo6rfbu7D13
+        dvvG+sAapgIJVzuhhQZP1rkWlOCSWMHaQ6KVNeM+xoIFTJTlgoPbAGwkvwHdAG+ULbl1d1lO4Z6u
+        pjgtnyN9uKahpVwzJYJuAdHXDr0C0F3dIViRx/r1do4TZi8dxpUKNvQD3Rzm07bcHnE4vR5Smtem
+        qugFhzlS6aehyt15oaeenrPL7a5g+yX+Ip2yCrS09bH4yq7ABam6tjZOqFCbzp9cXdjBaaN/gpcN
+        yNIo+Bf4tOy/sZ9Tv9CvZ+jH+f4P5rRQjNMGU0L/MNCY1nKVJQ74Oo34vH7EpnzgmjtOvNUoVcj0
+        QoTOVfkUgDtEo00tLUhlWwzSUIVae93J2ucP6WTorFKGJEEILTrA6ru/U9BSGG2Pu3dUBw1aZgIA
+        AA==
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '343'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:40 GMT
+      ETag:
+      - W/"266-iiG8WfrhIHQnDnIXUo7qkl6z/VE"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=11fa27a23bd277b2fca7e5ab72e33d5734d78863b35f837ce15bcc0040de10fb; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:40 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '294'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '94'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '194'
+      X-Server-Time:
+      - '1575283540862'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de109aa7674381358bad37e/actions?filter=commentCard%2CcopyCommentCard
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA+1UyW7bMBD9FUNn2yG1UMvNdg9BkTZBnLZAix6Gi2IilORQVNIk8L93GMkb2hQp
+        it5y4zLz5s3y5ttToGVQBIlUYc4oy6WSiQoVURATXpJgjP8fVMWVXVgFrrHeOJSMUwAR5yASSlkZ
+        l0CzEI0lOAiKp8CpHw4tZ3XjVsqORFNVqnZoIMBivH1USnKAlKVxlNEoyTjIKFVoV0OlEGDRrLWS
+        o4X38lSWq8YicDIOWn860/UNWuVmdfb5/WMUbMYBb44iCEkYyYkinEGUSBklYSjLfB/haQnV2qjR
+        3Ptt8P0Q+Mv5u9tQ3F97YKNbjLxl3uOyPE7ykhDglIPgcIA7wJ55rw26u4e1T2ioxJAQlss/hoTm
+        E0onEbmirKBpEbIpifKvyMboSrvWx8XyC6eb+vmyVnb2fPM/rQPX4XPQ3KCH1C1wo2ZIlhJCxsE9
+        2NrfckKQR1fr205dvM4/3XtTtvFpVMezsC3HyxPhSd9p9zA3jbhR2PsSTKvGAdzhqNhTaFdIHGjM
+        okjFOSWRyCIhy5InnMY8kXGWM4Fp9fafrEHzlXPrtjg5cVYZ00z6r3baRlOo4LGp4b6dYqFPXgFb
+        dsZ87GdtbjXUo8vOGSWv/QxuJ/9SlcpahaNfozW+19ppzAKZzE8v0bBu6ouOGy2wG1ij3XV2B9r4
+        Zuyy7lplh9HmK7sNhYXdFlIqrwh+rIgsO2DzVzrcqWEI+su09+p/WSUvqeG1Oj6U7MDhWNOHAQ51
+        7AMsm84KLN62OEgzZXESChqLLE5ZwjOUdd+qZb8Zwt3qGAT4rDRsipbnVl/rGsyiX0a+n39aZcMK
+        G2C2GwyRdkpePwxQv1EzSSaEXdGsIHERJdOU0SM175S0T+5NQv8kobfV9J9W0/ef0hA/NiQIAAA=
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '683'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:41 GMT
+      ETag:
+      - W/"824-ehkx1RZbcJbFr/Qz1XVSOyCENf4"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=4390595bcb32f3cf0f4f33982219b103b28f188cf095fc78669982fc3f4d11c2; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:41 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '293'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '93'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '193'
+      X-Server-Time:
+      - '1575283541067'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/lists/5de1242a40e0d50cefdce37d/cards?filter=open&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4uOBQApu0wNAgAAAA==
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '22'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:41 GMT
+      ETag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=2656fdc0e6e3d1a5a0729a72afda9f71f200da86ef18567d37c32b20353f6437; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:41 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '292'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '92'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '192'
+      X-Server-Time:
+      - '1575283541217'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/lists/5de12416f49ca27691aac540/cards?filter=open&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA+1VUW+bMBD+KxPPScCAIfDWZJvUKZW2Np26VX0wtgNWDUbYZEur/vedIaG0mzRV
+        W6U89AHpMHfn777vPnF97wjmpA5m3J9jn4YIUTL3YhIE83kSJM7EoQWnt6eGlxeGGK6dtGqlhGOp
+        NIfSDZGaTxwG31ZEmxNqxFaYHfT0PZRMEZoG3hrh1MMpimY4jr5DT8Y1hYx99J4YcmjLWn7OS1Ex
+        3hyOBFso0nQoKfMiL/G4l0UkwIwF2PfZxqIUbCW06SdBfoiiTZhQ4sdRggihOPS6nDNeZrzRX5Wx
+        0K9vbN1FoRooTGx8YgyhRckrs1TbMYIVybiE2W1JSaqWyC7hMX8goiIlBxgnlTIFb94tLfKJUyso
+        DgBOPMMTR9srV6K6hcQ6Z1e7z2ffLD695mUtgcmhW0ZYbjm/d8gATS92610NOfeOabiUykZZT5EH
+        wnRceQ8PE0cqSoxQ1dBuC4NDN8jaCv5DVHlPyJ6PvZS6zTRtRDZSd6PyrM3vesmGheg7Pb4u7abY
+        KotClZbGPmWEvfto5W9E/QQaCH8QHMKlAiL4QATM8vthd3aoEay7XcISwJ29snu1+1c5UrDj/7KR
+        ME9hTK1T1+2ZnAFsl7ojTf5ARvv3QjeZkn4Bpp0clo9un6zdxkuz95KSarTul7VUhHG2IPQ2b1Rb
+        AaV9ohZ3drkq1ZREwsZkjcgLU3ENMzvSxg5QRVttVPlRcMmsbzs+HiZPnB5seBh7STKnSQQPwj50
+        G5T8Z6cHeBYHyZE6HcF6jlV4DauHQCma+c+8/vOq+OR/iKM3rx+P10eavMzrh0IXecdsdvsz5PA7
+        DzcYkcCnmCce+R9m95M1ClI8T3E48/35kZo9en2vRxgHz4y+LtvTL+cL8Wb04zH6SJOXGf1Q6EZH
+        5/ObX/BuNtfACwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '696'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:41 GMT
+      ETag:
+      - W/"bc0-R4EspLG6xEB57v+c5qI3DqShw0A"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=6ede9f4b24fa45fa0e19f06690dd6402a75097df1df6ff77cc2419557401054c; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:41 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '291'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '91'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '191'
+      X-Server-Time:
+      - '1575283541358'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de2852c411ca807a3388939?badges=False&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4VTTW/bMAz9K4POTuKP2Il9S1IMGJACw5oO3YYdaEmxhciSYckZ0qD/fZScDxc9
+        9EbS5NN75POZCEYKkjIeL9OYzqOIwjJcQJIsl3mSk4CUwCpuSHEmYC3QuuHKmvVpd2q5K9qOS6ld
+        VGroECsMCB2Ct7eASE3BCq1IsQdpeECO2jo07DoK/k+o6pE3Je9+YhmHL02mLw3tRDkq7XVV9tUr
+        ckVOtOb08M3yZkC6pxv3wU05FrrxXH0y4u5zxt0D7TtqrEdFqpcyIBhudNNKbrHkSaGW2zNPFryI
+        P3+xKLUZ0fw4iGDYvQVjV9SKo7An1BCHUT6JokkS7qK0CNMiyqbpIvuN2hyzQaWLHsDCiNQo/MEb
+        oRjvriXegJDXRLD1cA2SUhZmYR7ysMwgSRlL0jhme3dZwfy6pDAW9+jF9Mbq5qvgkl2266qCbbFl
+        cEkUz6NsP88pxIssjwBoOg891nDHC5Bgl/Ry1wHmqdYd4uQOcnUz00Yf7yoklFzeQLajrAHVg/TN
+        99mbYxQ0eCmyUtrWvPuycQ4MSKsRKkGmi2kaEOOe3wp1wMa2Yi+n74+/sMmXnzvcHamtbU0xmw2m
+        nqKDZnQ2bv3oy/7zwVk+gYHXxP8Zzppe8vndHq63o1rq21UFe26lBsbZGuih6nSv0N2DSY14dZqV
+        7hqQKKTsRFVbxQ2KJtLFBF0rzI6jk9GDVyf/BwI9U2f0AwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '549'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:41 GMT
+      ETag:
+      - W/"3f4-wb2tGmmOrYXRiG1gfeIM96sdIx8"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=927d656fb997002f0a84c3949b41461f9364ef6554ab21487aaa406cbeb397d8; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:41 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '290'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '90'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '190'
+      X-Server-Time:
+      - '1575283541543'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de2852c411ca807a3388939/checklists
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4uOBQApu0wNAgAAAA==
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '22'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:41 GMT
+      ETag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=24b8a9877e5345ff591512a29dc99cd6645a2d3f94073a063f67b44f9e285708; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:41 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '289'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '89'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '189'
+      X-Server-Time:
+      - '1575283541705'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de2853fe470998c968c9152?badges=False&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4VTwY6bMBD9lcpnkmAIZOGWpK3UKr10s6uqVQ/GnoAVYyNs0maj/feOISGs9tBD
+        pJlh5vm9mZcLkYLkJBEQPSTxAZarMMseeJbijyYRCUjBRAmW5BfCnGO8qkE7uznvzw34omtBKeOj
+        wrAWscKA8CF4fQ2IMpw5aTTJD0xZCMjJOI+GXScJf6Quv0FdQPuMZRy+NtmusLyVxaR0MGXRlS/I
+        FTnxCvjxi4N6QLqnW//BT3kWpu659smEe58L8A80b6iJDhXpTqmAYLg1daPAYaknhVrGZx4d60X8
+        +o1FZeyE5vtBBMPuHbNuzZ08SXdGDVFIsxmlszjc0yQPkzxO5qs4+4naPLNBpY8+MscmpCbhd6il
+        FtDeSlAzqW6JFJvhGiThIkzDLISwSFmcCBEnUSQOGb4kRb8uJa3DPXoxUuwwGfxAoyVND8uMs2iV
+        ZpQxnizDfmq42DhyTa8XHGAeK9MiDsUzSLEefbM1pzthxQpQI8puktVMd0z1zffZ0Rya1XgUstbG
+        VdB+2HqzBaQxCLVEz9J5lATEegI7qY/Y+fdH9TX6tEqxqy8/tbgnUjnX2HyxGAw8R7cs+GLa+t6D
+        vLPO1J8lKHE1n1fb/R9uQcMZG/jO+j+Hd2e/isub/dzOx40y42GleGqUYQLEhvFj2ZpOo8EHn1r5
+        4nehTVszhfqKVpaV02BxGUT5mKBxpd0DmhlteDPzPw19F4n3AwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '552'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:41 GMT
+      ETag:
+      - W/"3f7-OknPe6ECHA3/BtkxKyEEnJuG0ts"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=80d1962cfe0c5fdde1bb91afa262e0fb1f5f6f170025cf11104979e3ae7aa902; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:41 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '288'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '88'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '188'
+      X-Server-Time:
+      - '1575283541862'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de2853fe470998c968c9152/checklists
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4uOBQApu0wNAgAAAA==
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '22'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:42 GMT
+      ETag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=65bfe854e8d6a5852c9bb773502deeac293eceaf7b16b9d3d7026579121e3b1a; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:41 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '287'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '87'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '187'
+      X-Server-Time:
+      - '1575283542035'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de1241ea334f51a32c5e90a?badges=False&customFieldItems=true
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4VTTW/bMAz9K4POTuOPyKt9SzIMKJAd1qY7dNiBlhhbiGQFlpwhLfrfR9n5cNHD
+        biRNPr1HPr8xJVnJuMQkXSQIWbbY8QSyVHAsYmARq0DW6Fj5xsB7EI3B1rvVaXs6YCj6DrW2Iaos
+        dIQVR0yMwft7xLQV4JVtWbkD7TBiR+sDGnUdFf5Vbf0DTYXdLyrT8LnJ9ZUTnaompZ2tq75+Ja7E
+        STQo9g8ezYh0S9fhQ5gKLKwZuA7JhPuQSwwPHD5Qkz0panutI0bh2pqDRk+lgRRpuT7z5GEQ8fsP
+        FbV1E5qfBwmMujfg/FJ4dVT+RBrSOClmSTJLi22Slfy+5Iu7NL1/IW2B2agyRN/Aw4TUJHxEo1qJ
+        3aWEBpS+JEquxmswLmScx0WMcZVDxqXMeJrKXUEvKTmsSyvnaY+DmN55a74r1PK83VBVckMtN5fk
+        u0UhIP2aFwmA4It4wBrveAZS8pye7zrCPDW2I5w8QC6vZlrb402Fhgr1FWQzyQy0Peih+TZ7dUwL
+        hi7Flq31DXZf1sGBETtYgso5z3jEXHh8o9o9tW1N//DzcaWoZSg/d7Q51nh/cOV8Plr6jvwzF/Np
+        62dX9v8fnOczGFnNhv8iGHMQ/PZhC5fLCavt9aZKPh+0BYlyBWJfd7ZvydujRZ16DYpb2xnQJKTq
+        VN34Fh1JZjrEjDyr3BbJx+TAi4//AdGOJWnyAwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '543'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:42 GMT
+      ETag:
+      - W/"3f2-HHvdwBh/IHV4jk53VCsz+UC+RPk"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=d59f3534ad9448965f2b63f7d08cbb3c55be36ad0e6ec14eea7bd608a716ab29; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:42 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '286'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '86'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '186'
+      X-Server-Time:
+      - '1575283542253'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - !!binary |
+        YXBwbGljYXRpb24vanNvbg==
+      Accept-Encoding:
+      - !!binary |
+        Z3ppcCwgZGVmbGF0ZQ==
+      Connection:
+      - !!binary |
+        a2VlcC1hbGl2ZQ==
+      Content-Length:
+      - '2'
+      User-Agent:
+      - !!binary |
+        cHl0aG9uLXJlcXVlc3RzLzIuMjIuMA==
+    method: GET
+    uri: https://api.trello.com/1/cards/5de1241ea334f51a32c5e90a/checklists
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEA4uOBQApu0wNAgAAAA==
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, Accept, Content-Type
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining,
+        x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '22'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 02 Dec 2019 10:45:42 GMT
+      ETag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - dsc=8ab2b0c51d407058f7cabdb906f4e8174a936aefa53aa423d5daa1bd4c5fa1cc; Path=/;
+        Expires=Thu, 05 Dec 2019 10:45:42 GMT; Secure
+      Strict-Transport-Security:
+      - max-age=15552000
+      Surrogate-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-KEY-MAX:
+      - '300'
+      X-RATE-LIMIT-API-KEY-REMAINING:
+      - '285'
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-API-TOKEN-MAX:
+      - '100'
+      X-RATE-LIMIT-API-TOKEN-REMAINING:
+      - '85'
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS:
+      - '10000'
+      X-RATE-LIMIT-MEMBER-MAX:
+      - '200'
+      X-RATE-LIMIT-MEMBER-REMAINING:
+      - '185'
+      X-Server-Time:
+      - '1575283542464'
+      X-Trello-Environment:
+      - Production
+      X-Trello-Version:
+      - 1.1897.0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

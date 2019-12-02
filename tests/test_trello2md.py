@@ -11,6 +11,11 @@ import trello2md
 TESTS_DIRNAME = pathlib.Path(__file__).parent.resolve()
 SCRIPT_NAME = trello2md.__file__
 
+pytestmark = [
+    pytest.mark.vcr(filter_headers=["authorization"]),
+    pytest.mark.block_network,
+]
+
 
 def test_write_board(tmp_path, monkeypatch, capsys):
     url = "https://trello.com/b/WODq2cwg/sample-board"
@@ -45,8 +50,10 @@ def test_write_board(tmp_path, monkeypatch, capsys):
 @pytest.mark.parametrize(
     "url, md_filename",
     [
-        ("https://trello.com/c/HGYGb5iM/2-sample-card", "sample-card.md"),
-        ("https://trello.com/c/9lhLVJz3", "copied-card.md"),
+        pytest.param(
+            "https://trello.com/c/HGYGb5iM/2-sample-card", "sample-card.md", id="sample"
+        ),
+        pytest.param("https://trello.com/c/9lhLVJz3", "copied-card.md", id="copied"),
     ],
 )
 def test_write_card(url, md_filename, monkeypatch, capsys):
