@@ -2,7 +2,7 @@
 Export Trello boards and cards to Markdown.
 
 TODO:
-- Show due, labels, members in list
+- Use cached_property (requires 3.8)
 - Save credentials to a file
 - Reconsider print partial
 - Use argparse
@@ -14,9 +14,10 @@ import os
 import re
 import sys
 from contextlib import contextmanager
+from dataclasses import dataclass
 from functools import partial
 from getpass import getpass
-from typing import IO, Iterator, Optional
+from typing import Any, Dict, IO, Iterator, List, Optional, cast
 
 import trello
 import trello.util
@@ -45,7 +46,7 @@ def main() -> Optional[int]:
         with open_board(board) as file:
             write_board(board, file)
     else:
-        card = client.get_card(object_id)
+        card = CardWrapper(client.get_card(object_id))
         write_card(card)
 
     return None
@@ -92,18 +93,82 @@ def write_board(board: trello.Board, file: Optional[IO[str]] = None) -> None:
     for lst in board.open_lists():
         print(f"\n## {lst.name}")
 
-        cards = lst.list_cards()
+        cards = [CardWrapper(c) for c in lst.list_cards()]
         if cards:
             print()
 
         for card in cards:
             with open_card(card) as file:
                 write_card(card, file=file)
-                print(f"- [{card.name}]({file.name})")
+
+                link = f"- [{card.name}]({file.name})"
+                meta = ", ".join(card.meta)
+                print(f"{link} {meta}" if meta else link)
+
+
+@dataclass
+class CardWrapper:
+    """Friendlier API for a Trello card."""
+
+    card: trello.Card
+
+    # HACK: Avoid spurious D102 from pydocstyle on first @property
+    def __post_init__(self) -> None:
+        pass
+
+    @property
+    def url(self) -> str:
+        return cast(str, self.card.url)
+
+    @property
+    def name(self) -> str:
+        return cast(str, self.card.name)
+
+    @property
+    def description(self) -> str:
+        return cast(str, self.card.description)
+
+    @property
+    def checklists(self) -> List[trello.Checklist]:
+        return cast(List[trello.Checklist], self.card.checklists)
+
+    @property
+    def attachments(self) -> List[Dict[str, Any]]:
+        return cast(List[Dict[str, Any]], self.card.attachments)
+
+    @property
+    def comments(self) -> List[Dict[str, Any]]:
+        return [
+            {
+                "member": c["memberCreator"]["username"],
+                "date": c["date"][:10],
+                "text": c["data"]["text"],
+            }
+            for c in self.card.comments
+        ]
+
+    @property
+    def due_date(self) -> Optional[str]:
+        return self.card.due[:10] if self.card.due else None
+
+    @property
+    def labels(self) -> List[str]:
+        return [f"`{l.name if l.name else l.color}`" for l in self.card.labels or []]
+
+    @property
+    def members(self) -> List[str]:
+        return [
+            f"@{self.card.board.client.get_member(i).username}"
+            for i in self.card.member_ids
+        ]
+
+    @property
+    def meta(self) -> List[str]:
+        return [x for x in [self.due_date, *self.members, *self.labels] if x]
 
 
 @contextmanager
-def open_card(card: trello.Card) -> Iterator[IO[str]]:
+def open_card(card: CardWrapper) -> Iterator[IO[str]]:
     """Yield an open file for a Trello card."""
     filename = get_filename(get_slug(card.url), ".md")
     print(f"{card.name:30.30} -> {filename}")
@@ -111,14 +176,15 @@ def open_card(card: trello.Card) -> Iterator[IO[str]]:
         yield file
 
 
-def write_card(card: trello.Card, file: Optional[IO[str]] = None) -> Optional[str]:
+def write_card(card: CardWrapper, file: Optional[IO[str]] = None) -> Optional[str]:
     """Print Markdown for a Trello card."""
     print = partial(builtins.print, file=file if file else sys.stdout)
 
     print(f"# {card.name}")
 
-    if card.due:
-        print(f"\n**Due:** {card.due[:10]}")
+    if card.meta:
+        print()
+        print(", ".join(card.meta))
 
     if card.description:
         print(f"\n{card.description}")
@@ -142,12 +208,8 @@ def write_card(card: trello.Card, file: Optional[IO[str]] = None) -> Optional[st
             print(f"- [{attachment['name']}]({attachment['url']})")
 
     for comment in card.comments:
-        print(
-            "\n## Comment from"
-            f" {comment['memberCreator']['fullName']}"
-            f" on {comment['date'][:10]}\n"
-        )
-        print(comment["data"]["text"])
+        print(f"\n## Comment from {comment['member']} on {comment['date']}\n")
+        print(comment["text"])
 
     return None
 

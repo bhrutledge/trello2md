@@ -2,8 +2,8 @@
 
 ## Sample List
 
-- [Sample Card](sample-card.md)
-- [Copied Card](copied-card.md)
+- [Sample Card](sample-card.md) 2019-05-07, @bhrutledge, `green`, `Sample Label`
+- [Copied Card](copied-card.md) 2019-05-07
 
 ## Empty List
 

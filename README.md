@@ -39,8 +39,8 @@ $ cat sample-board/index.md
 
 ## Sample List
 
-- [Sample Card](sample-card.md)
-- [Copied Card](copied-card.md)
+- [Sample Card](sample-card.md) 2019-05-07, @bhrutledge, `green`, `Sample Label`
+- [Copied Card](copied-card.md) 2019-05-07
 
 ## Empty List
 
@@ -59,7 +59,7 @@ Run with the URL for a Trello card as the only argument to print Markdown. For e
 $ trello2md https://trello.com/c/HGYGb5iM/2-sample-card
 # Sample Card
 
-**Due:** 2019-05-07
+2019-05-07, @bhrutledge, `green`, `Sample Label`
 
 Sample description
 
@@ -72,7 +72,7 @@ Sample description
 
 - [Example link](https://example.com)
 
-## Comment from Brian Rutledge on 2019-05-06
+## Comment from bhrutledge on 2019-05-06
 
 Sample comment
 
