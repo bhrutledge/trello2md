@@ -5,11 +5,11 @@ import sys
 
 import pytest
 
-import trello2md
+from trello2md import cli
 
 
 TESTS_DIRNAME = pathlib.Path(__file__).parent.resolve()
-SCRIPT_NAME = trello2md.__file__
+SCRIPT_NAME = __name__
 
 pytestmark = [
     pytest.mark.vcr(filter_headers=["authorization"]),
@@ -24,7 +24,7 @@ def test_write_board(tmp_path, monkeypatch, capsys):
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(sys, "argv", [SCRIPT_NAME, url])
 
-    trello2md.main()
+    cli.main()
 
     captured = capsys.readouterr()
 
@@ -60,7 +60,7 @@ def test_write_card(url, md_filename, monkeypatch, capsys):
     md_dirname = "sample-board"
     monkeypatch.setattr(sys, "argv", [SCRIPT_NAME, url])
 
-    trello2md.main()
+    cli.main()
 
     with open(TESTS_DIRNAME / md_dirname / md_filename) as f:
         sample_card = f.read()
