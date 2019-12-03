@@ -2,6 +2,9 @@
 Export Trello boards and cards to Markdown.
 
 TODO:
+- Separate into cli.py and api.py
+- Add complete wrapper around py-trello
+- Add "## Comments" section
 - Use cached_property (requires 3.8)
 - Save credentials to a file
 - Reconsider print partial
