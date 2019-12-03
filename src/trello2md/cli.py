@@ -2,7 +2,6 @@
 Export Trello boards and cards to Markdown.
 
 TODO:
-- Add "## Comments" section
 - Save credentials to a file
 - Use package name in get_authorization
 - Reconsider print partial
@@ -138,7 +137,8 @@ def write_card(card: api.Card, file: Optional[IO[str]] = None) -> Optional[str]:
             print(f"- [{'x' if item.checked else ' '}] {item.name}")
 
     if card.attachments:
-        print("\n## Attachments\n")
+        print("\n## Attachments")
+        print()
 
     for attachment in card.attachments:
         if attachment.name == attachment.url:
@@ -146,8 +146,11 @@ def write_card(card: api.Card, file: Optional[IO[str]] = None) -> Optional[str]:
         else:
             print(f"- [{attachment.name}]({attachment.url})")
 
+    if card.comments:
+        print("\n## Comments")
+
     for comment in card.comments:
-        print(f"\n## Comment from {comment.member} on {comment.date}\n")
+        print(f"\n### {comment.member} on {comment.date}\n")
         print(comment.body)
 
     return None

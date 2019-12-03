@@ -72,7 +72,9 @@ Sample description
 
 - [Example link](https://example.com)
 
-## Comment from bhrutledge on 2019-05-06
+## Comments
+
+### bhrutledge on 2019-05-06
 
 Sample comment
 
