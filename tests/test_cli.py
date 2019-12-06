@@ -1,9 +1,4 @@
 # type: ignore
-"""Tests for trello2md CLI.
-
-TODO:
-- Rename to test_cli.py
-"""
 import filecmp
 import stat
 import sys
