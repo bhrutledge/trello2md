@@ -1,10 +1,4 @@
-"""Friendlier APIs for Trello.
-
-TODO:
-- Move Card.meta logic to cli.py
-- Reimplement get_credentials
-- Replace py-trello with REST API calls
-"""
+"""Friendlier APIs for Trello."""
 import re
 from dataclasses import dataclass, field
 from functools import cached_property as property

@@ -1,15 +1,4 @@
-"""
-Export Trello boards and cards to Markdown.
-
-TODO:
-- Use XDG_CONFIG_HOME for CONFIG_PATH (maybe appdirs?)
-- Replace os with with pathlib
-- Derive COMMAND_NAME from package name (maybe importlib?)
-- Reconsider print partial
-- Use argparse
-- Option to remove existing board directory
-- Download attachments?
-"""
+"""Export Trello boards and cards to Markdown."""
 import builtins
 import os
 import re
