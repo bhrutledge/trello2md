@@ -2,8 +2,9 @@
 Export Trello boards and cards to Markdown.
 
 TODO:
-- Save credentials to a file
-- Use package name in get_authorization
+- Use XDG_CONFIG_HOME for CONFIG_PATH (maybe appdirs?)
+- Replace os with with pathlib
+- Derive COMMAND_NAME from package name (maybe importlib?)
 - Reconsider print partial
 - Use argparse
 - Option to remove existing board directory
@@ -12,28 +13,56 @@ TODO:
 import builtins
 import os
 import re
+import stat
 import sys
+from configparser import ConfigParser
 from contextlib import contextmanager
 from functools import partial
-from getpass import getpass
+from pathlib import Path
 from typing import IO, Iterator, Optional
 
 from . import api
 
+COMMAND_NAME = "trello2md"
+CONFIG_PATH = Path.home() / ".config" / COMMAND_NAME
+
 
 def main() -> Optional[int]:
-    """Print Markdown for a Trello object."""
+    """Process command line arguments."""
     arg = sys.argv[1]
 
     if arg == "auth":
-        get_authorization()
-        return None
+        write_credentials()
+    else:
+        write_object_from_url(arg)
 
-    client = api.Client(
-        api_key=os.environ["TRELLO_API_KEY"], token=os.environ["TRELLO2MD_TOKEN"],
-    )
+    return None
 
-    obj = client.get_url(arg)
+
+def write_credentials() -> None:
+    """Prompt for and save API credentials."""
+    config = ConfigParser()
+    config["credentials"] = api.get_credentials(COMMAND_NAME)
+
+    with open(CONFIG_PATH, "w") as config_file:
+        config.write(config_file)
+
+    CONFIG_PATH.chmod(stat.S_IRUSR | stat.S_IWUSR)
+
+    print()
+    print(f"Credentials saved to {CONFIG_PATH}")
+
+
+def write_object_from_url(url: str) -> None:
+    """Print Markdown for a Trello object."""
+    config = ConfigParser()
+
+    with open(CONFIG_PATH) as config_file:
+        config.read_file(config_file)
+
+    client = api.Client(config["credentials"])
+
+    obj = client.get_url(url)
 
     if isinstance(obj, api.Board):
         with open_board(obj) as file:
@@ -41,34 +70,6 @@ def main() -> Optional[int]:
 
     elif isinstance(obj, api.Card):
         write_card(obj)
-
-    return None
-
-
-def get_authorization() -> None:
-    """Prompt for and generate API credentials."""
-    from trello.util import create_oauth_token
-
-    print("Go to the following link in your browser:")
-    print("https://trello.com/app-key")
-    print()
-
-    api_key = input("Enter your API key: ")
-    api_secret = getpass("Enter your API secret: ")
-    print()
-
-    access_token = create_oauth_token(
-        expiration="never",
-        key=api_key,
-        secret=api_secret,
-        name="trello2md",
-        output=False,
-    )
-
-    print()
-    print("Set these environment variables:")
-    print(f"TRELLO_API_KEY={api_key}")
-    print(f"TRELLO2MD_TOKEN={access_token['oauth_token']}")
 
 
 @contextmanager

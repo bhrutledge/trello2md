@@ -1,21 +1,23 @@
 """Friendlier APIs for Trello.
 
 TODO:
+- Move Card.meta logic to cli.py
+- Reimplement get_credentials
 - Replace py-trello with REST API calls
 """
 import re
 from dataclasses import dataclass, field
 from functools import cached_property as property
-from typing import Any, Dict, List, Optional, Union, cast
+from typing import Any, Mapping, Optional, Sequence, Union, cast
 
-import trello
+import trello  # type: ignore
 
 
 @dataclass
 class Comment:
     """Friendlier API for a Trello comment."""
 
-    obj: Dict[str, Any]
+    obj: Mapping[str, Any]
 
     @property
     def member(self) -> str:  # noqa: D102
@@ -34,7 +36,7 @@ class Comment:
 class Attachment:
     """Friendlier API for a Trello attachment."""
 
-    obj: Dict[str, Any]
+    obj: Mapping[str, Any]
 
     @property
     def url(self) -> str:  # noqa: D102
@@ -49,7 +51,7 @@ class Attachment:
 class ChecklistItem:
     """Friendlier API for a Trello checklist item."""
 
-    obj: Dict[str, Any]
+    obj: Mapping[str, Any]
 
     @property
     def name(self) -> str:  # noqa: D102
@@ -71,7 +73,7 @@ class Checklist:
         return cast(str, self.obj.name)
 
     @property
-    def items(self) -> List[ChecklistItem]:
+    def items(self) -> Sequence[ChecklistItem]:
         return [ChecklistItem(l) for l in self.obj.items]
 
 
@@ -98,30 +100,30 @@ class Card:
         return self.obj.due[:10] if self.obj.due else None
 
     @property
-    def labels(self) -> List[str]:
+    def labels(self) -> Sequence[str]:
         return [f"`{l.name if l.name else l.color}`" for l in self.obj.labels or []]
 
     @property
-    def members(self) -> List[str]:
+    def members(self) -> Sequence[str]:
         return [
             f"@{self.obj.board.client.get_member(i).username}"
             for i in self.obj.member_ids
         ]
 
     @property
-    def meta(self) -> List[str]:
+    def meta(self) -> Sequence[str]:
         return [x for x in [self.due_date, *self.members, *self.labels] if x]
 
     @property
-    def checklists(self) -> List[Checklist]:
+    def checklists(self) -> Sequence[Checklist]:
         return [Checklist(c) for c in self.obj.checklists]
 
     @property
-    def attachments(self) -> List[Attachment]:
+    def attachments(self) -> Sequence[Attachment]:
         return [Attachment(a) for a in self.obj.attachments]
 
     @property
-    def comments(self) -> List[Comment]:
+    def comments(self) -> Sequence[Comment]:
         return [Comment(c) for c in self.obj.comments]
 
 
@@ -137,7 +139,7 @@ class CardList:
         return cast(str, self.obj.name)
 
     @property
-    def cards(self) -> List[Card]:
+    def cards(self) -> Sequence[Card]:
         return [Card(l) for l in self.obj.list_cards()]
 
 
@@ -156,20 +158,22 @@ class Board:
         return cast(str, self.obj.name)
 
     @property
-    def lists(self) -> List[CardList]:
+    def lists(self) -> Sequence[CardList]:
         return [CardList(l) for l in self.obj.open_lists()]
+
+
+Config = Mapping[str, str]
 
 
 @dataclass
 class Client:
     """Friendlier API for the Trello client."""
 
-    api_key: str
-    token: str
+    credentials: Config
     obj: trello.TrelloClient = field(init=False)
 
     def __post_init__(self) -> None:
-        self.obj = trello.TrelloClient(api_key=self.api_key, token=self.token)
+        self.obj = trello.TrelloClient(**self.credentials)
 
     def get_url(self, url: str) -> Optional[Union[Board, Card]]:
         """Return a Trello board or card from a URL."""
@@ -183,3 +187,28 @@ class Client:
             return Board(self.obj.get_board(object_id))
 
         return Card(self.obj.get_card(object_id))
+
+
+def get_credentials(app_name: str) -> Config:
+    """Prompt for and generate API credentials."""
+    print("Go to the following link in your browser:")
+    print("https://trello.com/app-key")
+    print()
+
+    api_key = input("Enter your API key: ")
+    api_secret = input("Enter your API secret: ")
+    print()
+
+    access_token = trello.util.create_oauth_token(
+        expiration="never",
+        scope="read",
+        key=api_key,
+        secret=api_secret,
+        name=app_name,
+        output=False,
+    )
+
+    return {
+        "api_key": api_key,
+        "token": access_token["oauth_token"],
+    }

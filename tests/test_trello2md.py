@@ -1,15 +1,22 @@
 # type: ignore
+"""Tests for trello2md CLI.
+
+TODO:
+- Rename to test_cli.py
+"""
 import filecmp
-import pathlib
+import stat
 import sys
+from io import StringIO
+from pathlib import Path
 
 import pytest
 
 from trello2md import cli
 
 
-TESTS_DIRNAME = pathlib.Path(__file__).parent.resolve()
-SCRIPT_NAME = __name__
+TESTS_DIRNAME = Path(__file__).parent.resolve()
+COMMAND_NAME = __name__
 
 pytestmark = [
     pytest.mark.vcr(filter_headers=["authorization"]),
@@ -17,12 +24,52 @@ pytestmark = [
 ]
 
 
-def test_write_board(tmp_path, monkeypatch, capsys):
+@pytest.mark.vcr(decode_compressed_response=True)
+def test_write_credentials(tmp_path, monkeypatch, capsys):
+    config_path = tmp_path / "config"
+    monkeypatch.setattr(cli, "CONFIG_PATH", config_path)
+    monkeypatch.setattr(sys, "argv", [COMMAND_NAME, "auth"])
+
+    inputs = StringIO(
+        # Enter your API key:
+        "api_key\n"
+        # Enter your API secret:
+        "api_secret\n"
+        # Have you authorized me? (y/n)
+        "y\n"
+        # What is the PIN?
+        "verification\n"
+    )
+    monkeypatch.setattr(sys, "stdin", inputs)
+
+    cli.main()
+
+    assert config_path.read_text() == (
+        "[credentials]\napi_key = api_key\ntoken = oauth_token\n\n"
+    )
+
+    assert stat.S_IMODE(config_path.stat().st_mode) == stat.S_IRUSR | stat.S_IWUSR
+
+    captured = capsys.readouterr()
+    assert str(config_path) in captured.out
+
+
+@pytest.fixture
+def config_file(record_mode, tmp_path, monkeypatch):
+    if record_mode != "none":
+        return
+
+    config_path = tmp_path / "config"
+    config_path.write_text("[credentials]\napi_key = api_key\ntoken = oauth_token\n\n")
+    monkeypatch.setattr(cli, "CONFIG_PATH", config_path)
+
+
+def test_write_board(config_file, tmp_path, monkeypatch, capsys):
     url = "https://trello.com/b/WODq2cwg/sample-board"
     md_dirname = "sample-board"
 
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(sys, "argv", [SCRIPT_NAME, url])
+    monkeypatch.setattr(sys, "argv", [COMMAND_NAME, url])
 
     cli.main()
 
@@ -56,9 +103,9 @@ def test_write_board(tmp_path, monkeypatch, capsys):
         pytest.param("https://trello.com/c/9lhLVJz3", "copied-card.md", id="copied"),
     ],
 )
-def test_write_card(url, md_filename, monkeypatch, capsys):
+def test_write_card(url, md_filename, config_file, monkeypatch, capsys):
     md_dirname = "sample-board"
-    monkeypatch.setattr(sys, "argv", [SCRIPT_NAME, url])
+    monkeypatch.setattr(sys, "argv", [COMMAND_NAME, url])
 
     cli.main()
 
