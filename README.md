@@ -114,7 +114,7 @@ Sample comment
 
     - [pytest](https://docs.pytest.org/en/latest/) and [coverage.py](https://coverage.readthedocs.io/en/latest/) to run the tests
     - [pre-commit](https://pre-commit.com/) to run formatters and linters on every commit
-        - [mypy](https://mypy.readthedocs.io/en/latest/) to check types
-        - [black](https://black.readthedocs.io/en/stable/) to format the code
-        - [flake8](http://flake8.pycqa.org/en/latest/) to identify coding errors and check code style
-        - [pydocstyle](http://www.pydocstyle.org/en/latest/) to check docstring style
+    - [mypy](https://mypy.readthedocs.io/en/latest/) to check types
+    - [black](https://black.readthedocs.io/en/stable/) to format the code
+    - [flake8](http://flake8.pycqa.org/en/latest/) to identify coding errors and check code style
+    - [pydocstyle](http://www.pydocstyle.org/en/latest/) to check docstring style
