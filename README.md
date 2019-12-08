@@ -4,7 +4,7 @@ Export Trello boards and cards to Markdown. Currently tailored to my note-taking
 
 ## Installation
 
-**NOTE**: This currently depends on [my fork](https://github.com/bhrutledge/py-trello/) of the [py-trello package](https://github.com/sarumont/py-trello/), so it can't be installed directly from PyPI.
+**NOTE**: This currently depends on the master branch of the [py-trello package](https://github.com/sarumont/py-trello/), so it can't be installed directly from PyPI.
 
 Install on your path with [pipx](https://github.com/pipxproject/pipx):
 
