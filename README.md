@@ -97,14 +97,15 @@ Sample comment
 - Install this package and its dependencies for development
 
     ```
-    $ pip install -e .[dev]
+    $ pip install -e .[test] tox
 
-    $ pre-commit install --install-hooks
+    $ tox -e pre-commit -- install --install-hooks
     ```
 
     This will install:
 
-    - [pytest](https://docs.pytest.org/en/latest/) for writing and running tests
+    - [pytest](https://docs.pytest.org/en/latest/) and [coverage.py](https://coverage.readthedocs.io/en/latest/) to run the tests
+    - [tox](https://tox.readthedocs.io/en/latest/) to run common development tasks
     - [pre-commit](https://pre-commit.com/) to run formatters and linters on every commit
         - [mypy](https://mypy.readthedocs.io/en/latest/) to check types
         - [black](https://black.readthedocs.io/en/stable/) to format the code

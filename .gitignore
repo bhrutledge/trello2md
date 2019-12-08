@@ -6,3 +6,7 @@ dist
 .eggs
 venv
 .env
+.tox
+.coverage
+.coverage.*
+htmlcov/
