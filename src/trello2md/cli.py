@@ -90,9 +90,8 @@ def write_board(board: api.Board, file: Optional[IO[str]] = None) -> None:
             with open_card(card) as file:
                 write_card(card, file=file)
 
-                link = f"- [{card.name}]({file.name})"
-                meta = get_card_meta(card)
-                print(f"{link} {meta}" if meta else link)
+                print(f"- [{card.name}]({file.name})", end="")
+                print(f" {meta}" if (meta := get_card_meta(card)) else "")
 
 
 @contextmanager
@@ -110,8 +109,7 @@ def write_card(card: api.Card, file: Optional[IO[str]] = None) -> Optional[str]:
 
     print(f"# {card.name}")
 
-    meta = get_card_meta(card)
-    if meta:
+    if meta := get_card_meta(card):
         print()
         print(meta)
 
@@ -170,6 +168,6 @@ def get_filename(slug: str, ext: str = "") -> str:
 
 def get_card_meta(card: api.Card) -> str:
     """Return metadata for a Trello card, separated by commas."""
-    members = [f"@{m}" for m in card.members]
-    labels = [f"`{l}`" for l in card.labels]
+    members = [f"@{x}" for x in card.members]
+    labels = [f"`{x}`" for x in card.labels]
     return ", ".join([x for x in [card.due_date, *members, *labels] if x])

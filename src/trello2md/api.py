@@ -68,7 +68,7 @@ class Checklist:
 
     @property
     def items(self) -> Sequence[ChecklistItem]:
-        return [ChecklistItem(l) for l in self.obj.items]
+        return [ChecklistItem(x) for x in self.obj.items]
 
 
 @dataclass
@@ -95,25 +95,25 @@ class Card:
 
     @property
     def labels(self) -> Sequence[str]:
-        return [l.name if l.name else l.color for l in (self.obj.labels or [])]
+        return [x.name if x.name else x.color for x in (self.obj.labels or [])]
 
     @property
     def members(self) -> Sequence[str]:
         return [
-            self.obj.board.client.get_member(i).username for i in self.obj.member_ids
+            self.obj.board.client.get_member(x).username for x in self.obj.member_ids
         ]
 
     @property
     def checklists(self) -> Sequence[Checklist]:
-        return [Checklist(c) for c in self.obj.checklists]
+        return [Checklist(x) for x in self.obj.checklists]
 
     @property
     def attachments(self) -> Sequence[Attachment]:
-        return [Attachment(a) for a in self.obj.attachments]
+        return [Attachment(x) for x in self.obj.attachments]
 
     @property
     def comments(self) -> Sequence[Comment]:
-        return [Comment(c) for c in self.obj.comments]
+        return [Comment(x) for x in self.obj.comments]
 
 
 # Not named `List` because that clashes with `typing.List`
@@ -129,7 +129,7 @@ class CardList:
 
     @property
     def cards(self) -> Sequence[Card]:
-        return [Card(l) for l in self.obj.list_cards()]
+        return [Card(x) for x in self.obj.list_cards()]
 
 
 @dataclass
@@ -148,7 +148,7 @@ class Board:
 
     @property
     def lists(self) -> Sequence[CardList]:
-        return [CardList(l) for l in self.obj.open_lists()]
+        return [CardList(x) for x in self.obj.open_lists()]
 
 
 Config = Mapping[str, str]
