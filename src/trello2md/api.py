@@ -95,18 +95,13 @@ class Card:
 
     @property
     def labels(self) -> Sequence[str]:
-        return [f"`{l.name if l.name else l.color}`" for l in self.obj.labels or []]
+        return [l.name if l.name else l.color for l in (self.obj.labels or [])]
 
     @property
     def members(self) -> Sequence[str]:
         return [
-            f"@{self.obj.board.client.get_member(i).username}"
-            for i in self.obj.member_ids
+            self.obj.board.client.get_member(i).username for i in self.obj.member_ids
         ]
-
-    @property
-    def meta(self) -> Sequence[str]:
-        return [x for x in [self.due_date, *self.members, *self.labels] if x]
 
     @property
     def checklists(self) -> Sequence[Checklist]:
