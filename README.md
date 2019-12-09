@@ -6,7 +6,7 @@ Export Trello boards and cards to Markdown. Currently tailored to my note-taking
 
 **NOTE**: This currently depends on the master branch of the [py-trello package](https://github.com/sarumont/py-trello/), so it can't be installed directly from PyPI.
 
-Install on your path with [pipx](https://github.com/pipxproject/pipx):
+Install on your system with [pipx](https://github.com/pipxproject/pipx):
 
 ```
 $ pipx install --spec git+https://github.com/bhrutledge/trello2md trello2md
@@ -82,30 +82,37 @@ Sample comment
 
 ## Developing
 
+- Install [tox](https://tox.readthedocs.io/en/latest/) on your system, for example using [pipx](pipxproject.github.io/)
+
+    ```
+    $ pipx install tox
+    ```
+
 - [Fork and clone](https://help.github.com/en/articles/fork-a-repo) this repository
 
-- Create and activate a [virtual environment](https://docs.python.org/3/tutorial/venv.html)
+- Run the tests and generate a coverage report
 
     ```
-    $ cd trello2md
+    $ tox -e py38,coverage
+    ```
 
-    $ python3.8 -m venv venv
+- Run the formatters and linters
+
+    ```
+    $ tox -e check
+    ```
+
+- To run development tools individually, create and activate a [virtual environment](https://docs.python.org/3/tutorial/venv.html)
+
+    ```
+    $ tox -e venv
 
     $ source venv/bin/activate
-    ```
-
-- Install this package and its dependencies for development
-
-    ```
-    $ pip install -e .[test] tox
-
-    $ tox -e pre-commit -- install --install-hooks
     ```
 
     This will install:
 
     - [pytest](https://docs.pytest.org/en/latest/) and [coverage.py](https://coverage.readthedocs.io/en/latest/) to run the tests
-    - [tox](https://tox.readthedocs.io/en/latest/) to run common development tasks
     - [pre-commit](https://pre-commit.com/) to run formatters and linters on every commit
         - [mypy](https://mypy.readthedocs.io/en/latest/) to check types
         - [black](https://black.readthedocs.io/en/stable/) to format the code
