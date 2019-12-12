@@ -6,4 +6,3 @@ add-ignore =
     D107,  # Missing docstring in __init__
     D413,  # Missing blank line after last section
 ignore_decorators = property
-match_dir = (src|tests)
