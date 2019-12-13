@@ -1,8 +1,0 @@
-[pydocstyle]
-add-ignore =
-    D100,  # Missing docstring in public module
-    D104,  # Missing docstring in public package
-    D105,  # Missing docstring in magic method
-    D107,  # Missing docstring in __init__
-    D413,  # Missing blank line after last section
-ignore_decorators = property

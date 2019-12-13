@@ -14,7 +14,7 @@ class Comment:
     obj: Mapping[str, Any]
 
     @property
-    def member(self) -> str:  # noqa: D102
+    def member(self) -> str:
         return cast(str, self.obj["memberCreator"]["username"])
 
     @property
@@ -33,7 +33,7 @@ class Attachment:
     obj: Mapping[str, Any]
 
     @property
-    def url(self) -> str:  # noqa: D102
+    def url(self) -> str:
         return cast(str, self.obj["url"])
 
     @property
@@ -48,7 +48,7 @@ class ChecklistItem:
     obj: Mapping[str, Any]
 
     @property
-    def name(self) -> str:  # noqa: D102
+    def name(self) -> str:
         return cast(str, self.obj["name"])
 
     @property
@@ -63,7 +63,7 @@ class Checklist:
     obj: trello.Checklist
 
     @property
-    def name(self) -> str:  # noqa: D102
+    def name(self) -> str:
         return cast(str, self.obj.name)
 
     @property
@@ -78,7 +78,7 @@ class Card:
     obj: trello.Card
 
     @property
-    def url(self) -> str:  # noqa: D102
+    def url(self) -> str:
         return cast(str, self.obj.url)
 
     @property
@@ -124,7 +124,7 @@ class CardList:
     obj: trello.List
 
     @property
-    def name(self) -> str:  # noqa: D102
+    def name(self) -> str:
         return cast(str, self.obj.name)
 
     @property
@@ -139,7 +139,7 @@ class Board:
     obj: trello.Board
 
     @property
-    def url(self) -> str:  # noqa: D102
+    def url(self) -> str:
         return cast(str, self.obj.url)
 
     @property

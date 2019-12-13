@@ -1,3 +1,16 @@
 [flake8]
 # Matching black's default
 max-line-length = 88
+
+extend-ignore =
+    D104,  # Missing docstring in public package
+    D105,  # Missing docstring in magic method
+    D107,  # Missing docstring in __init__
+    D413,  # Missing blank line after last section
+
+# Don't require docstrings in tests (but check them if they exist)
+per-file-ignores =
+    tests/*:D1
+    setup.py:D100
+
+ignore-decorators = property
