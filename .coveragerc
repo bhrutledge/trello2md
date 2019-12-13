@@ -4,6 +4,13 @@ source =
     trello2md
     tests
 
+[report]
+fail_under = 100
+skip_covered = true
+show_missing = true
+omit =
+    */__main__.py
+
 [paths]
 # Enable `coverage combine` to convert long `.tox/**/site-packages` paths to
 # short `src/` paths. The former is a side-effect of running tests using the

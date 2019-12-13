@@ -1,5 +1,6 @@
 """Friendlier APIs for Trello."""
 import re
+from abc import ABC
 from dataclasses import dataclass, field
 from functools import cached_property as property
 from typing import Any, Mapping, Optional, Sequence, Union, cast
@@ -71,15 +72,25 @@ class Checklist:
         return [ChecklistItem(x) for x in self.obj.items]
 
 
-@dataclass
-class Card:
-    """Friendlier API for a Trello card."""
+class Exportable(ABC):
+    """Base class for an exportable Trello object."""
 
-    obj: trello.Card
+    obj: Any
 
     @property
     def url(self) -> str:
         return cast(str, self.obj.url)
+
+    @property
+    def slug(self) -> str:
+        return self.url.split("/")[-1]
+
+
+@dataclass
+class Card(Exportable):
+    """Friendlier API for a Trello card."""
+
+    obj: trello.Card
 
     @property
     def name(self) -> str:
@@ -116,10 +127,12 @@ class Card:
         return [Comment(x) for x in self.obj.comments]
 
 
-# Not named `List` because that clashes with `typing.List`
 @dataclass
 class CardList:
-    """Friendlier API for a Trello list."""
+    """Friendlier API for a Trello list.
+
+    Not named `List` because that clashes with `typing.List`.
+    """
 
     obj: trello.List
 
@@ -133,14 +146,10 @@ class CardList:
 
 
 @dataclass
-class Board:
+class Board(Exportable):
     """Friendlier API for a Trello board."""
 
     obj: trello.Board
-
-    @property
-    def url(self) -> str:
-        return cast(str, self.obj.url)
 
     @property
     def name(self) -> str:
@@ -164,11 +173,11 @@ class Client:
     def __post_init__(self) -> None:
         self.obj = trello.TrelloClient(**self.credentials)
 
-    def get_url(self, url: str) -> Optional[Union[Board, Card]]:
+    def get_url(self, url: str) -> Union[Board, Card]:
         """Return a Trello board or card from a URL."""
         url_match = re.search(r"trello\.com/([bc])/([\w]*)", url)
         if not url_match:
-            return None
+            raise ValueError(f"Invalid URL: {url}")
 
         object_type, object_id = url_match.group(1, 2)
 

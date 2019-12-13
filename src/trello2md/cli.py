@@ -16,14 +16,14 @@ COMMAND_NAME = "trello2md"
 CONFIG_PATH = Path.home() / ".config" / COMMAND_NAME
 
 
-def main() -> Optional[int]:
+def main() -> Optional[str]:
     """Process command line arguments."""
     arg = sys.argv[1]
 
     if arg == "auth":
         write_credentials()
     else:
-        write_object_from_url(arg)
+        write_url(arg)
 
     return None
 
@@ -42,8 +42,8 @@ def write_credentials() -> None:
     print(f"Credentials saved to {CONFIG_PATH}")
 
 
-def write_object_from_url(url: str) -> None:
-    """Print Markdown for a Trello object."""
+def write_url(url: str) -> None:
+    """Print Markdown from a Trello URL."""
     config = ConfigParser()
 
     with open(CONFIG_PATH) as config_file:
@@ -56,15 +56,14 @@ def write_object_from_url(url: str) -> None:
     if isinstance(obj, api.Board):
         with open_board(obj) as file:
             write_board(obj, file)
-
-    elif isinstance(obj, api.Card):
+    else:
         write_card(obj)
 
 
 @contextmanager
 def open_board(board: api.Board) -> Iterator[IO[str]]:
     """Yield an open file in a new directory for a Trello board."""
-    dirname = get_filename(get_slug(board.url))
+    dirname = get_filename(board.slug)
     os.mkdir(dirname)
     os.chdir(dirname)
 
@@ -97,13 +96,13 @@ def write_board(board: api.Board, file: Optional[IO[str]] = None) -> None:
 @contextmanager
 def open_card(card: api.Card) -> Iterator[IO[str]]:
     """Yield an open file for a Trello card."""
-    filename = get_filename(get_slug(card.url), ".md")
+    filename = get_filename(card.slug, ".md")
     print(f"{card.name:30.30} -> {filename}")
     with open(filename, "w") as file:
         yield file
 
 
-def write_card(card: api.Card, file: Optional[IO[str]] = None) -> Optional[str]:
+def write_card(card: api.Card, file: Optional[IO[str]] = None) -> None:
     """Print Markdown for a Trello card."""
     print = partial(builtins.print, file=file if file else sys.stdout)
 
@@ -142,26 +141,18 @@ def write_card(card: api.Card, file: Optional[IO[str]] = None) -> Optional[str]:
         print(f"\n### {comment.member} on {comment.date}\n")
         print(comment.body)
 
-    return None
-
-
-def get_slug(url: str) -> str:
-    """Return a slug derived from a Trello object URL."""
-    match = re.search(r"trello\.com.*/[\d-]*(.*)$", url)
-    if match is None:
-        raise ValueError(f"Invalid URL: {url}")
-
-    return match.group(1)
-
 
 def get_filename(slug: str, ext: str = "") -> str:
     """Return a unique filename."""
-    i = 0
+    # Remove numeric prefix from card slug
+    slug = re.sub(r"^\d+-", "", slug)
+
     filename = slug + ext
+    suffix = 0
 
     while os.path.exists(filename):
-        i += 1
-        filename = f"{slug}-{i}" + ext
+        suffix += 1
+        filename = f"{slug}-{suffix}" + ext
 
     return filename
 

@@ -50,7 +50,7 @@ def test_write_credentials(tmp_path, monkeypatch, capsys):
 
 @pytest.fixture
 def config_file(record_mode, tmp_path, monkeypatch):
-    if record_mode != "none":
+    if record_mode != "none":  # pragma: no cover
         return
 
     config_path = tmp_path / "config"
@@ -108,3 +108,18 @@ def test_write_card(url, md_filename, config_file, monkeypatch, capsys):
 
     captured = capsys.readouterr()
     assert captured.out == sample_card
+
+
+def test_no_arguments(config_file, monkeypatch):
+    monkeypatch.setattr(sys, "argv", [COMMAND_NAME])
+
+    with pytest.raises(IndexError):
+        cli.main()
+
+
+def test_invalid_argument(config_file, monkeypatch):
+    url = "https://trello.com/b"
+    monkeypatch.setattr(sys, "argv", [COMMAND_NAME, url])
+
+    with pytest.raises(ValueError, match=url):
+        cli.main()
