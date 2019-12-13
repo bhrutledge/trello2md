@@ -151,8 +151,7 @@ def get_filename(slug: str, ext: str = "") -> str:
     suffix = 0
 
     while os.path.exists(filename):
-        suffix += 1
-        filename = f"{slug}-{suffix}" + ext
+        filename = f"{slug}-{(suffix := suffix + 1)}{ext}"
 
     return filename
 
