@@ -1,4 +1,3 @@
-# type: ignore
 import filecmp
 import stat
 import sys

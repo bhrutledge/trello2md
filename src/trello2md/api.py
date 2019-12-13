@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from functools import cached_property as property
 from typing import Any, Mapping, Optional, Sequence, Union, cast
 
-import trello  # type: ignore
+import trello
 
 
 @dataclass
