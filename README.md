@@ -7,7 +7,7 @@ Export Trello boards and cards to Markdown. Currently tailored to my note-taking
 Install on your system with [pipx](https://github.com/pipxproject/pipx):
 
 ```
-$ pipx install trello2md
+$ pipx install --python python3.8 trello2md
 ```
 
 Authorize use of the Trello API:
