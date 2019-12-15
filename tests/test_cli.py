@@ -3,7 +3,6 @@ import runpy
 import stat
 import sys
 from importlib.metadata import entry_points
-from io import StringIO
 from pathlib import Path
 
 import pytest
@@ -19,23 +18,22 @@ pytestmark = [
 ]
 
 
-@pytest.mark.vcr(decode_compressed_response=True)
-def test_write_credentials(tmp_path, monkeypatch, capsys):
+# Autouse to ensure local config file isn't used by tests
+@pytest.fixture(autouse=True)
+def config_path(tmp_path, monkeypatch):
     config_path = tmp_path / "config"
     monkeypatch.setattr(cli, "CONFIG_PATH", config_path)
+    return config_path
+
+
+def test_write_credentials(config_path, monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", [COMMAND_NAME, "auth"])
 
-    inputs = StringIO(
-        # Enter your API key:
-        "api_key\n"
-        # Enter your API secret:
-        "api_secret\n"
-        # Have you authorized me? (y/n)
-        "y\n"
-        # What is the PIN?
-        "verification\n"
-    )
-    monkeypatch.setattr(sys, "stdin", inputs)
+    def stub_get_credentials(app_name):
+        assert app_name == "trello2md"
+        return {"api_key": "api_key", "token": "oauth_token"}
+
+    monkeypatch.setattr(cli.api, "get_credentials", stub_get_credentials)
 
     cli.main()
 
@@ -50,13 +48,10 @@ def test_write_credentials(tmp_path, monkeypatch, capsys):
 
 
 @pytest.fixture
-def config_file(record_mode, tmp_path, monkeypatch):
-    if record_mode != "none":  # pragma: no cover
-        return
-
-    config_path = tmp_path / "config"
-    config_path.write_text("[credentials]\napi_key = api_key\ntoken = oauth_token\n\n")
-    monkeypatch.setattr(cli, "CONFIG_PATH", config_path)
+def config_file(config_path, monkeypatch):
+    # Assuming sample board is public
+    config_path.write_text("[credentials]\napi_key = \ntoken = \n\n")
+    return config_path
 
 
 def test_write_board(config_file, tmp_path, monkeypatch, capsys):
