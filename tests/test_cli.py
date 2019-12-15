@@ -1,13 +1,14 @@
 import filecmp
+import runpy
 import stat
 import sys
+from importlib.metadata import entry_points
 from io import StringIO
 from pathlib import Path
 
 import pytest
 
 from trello2md import cli
-
 
 TESTS_DIRNAME = Path(__file__).parent.resolve()
 COMMAND_NAME = __name__
@@ -123,3 +124,23 @@ def test_invalid_argument(config_file, monkeypatch):
 
     with pytest.raises(ValueError, match=url):
         cli.main()
+
+
+def test_console_script(monkeypatch):
+    # Don't leak loaded module into other tests (esp. test_run_as_module)
+    monkeypatch.setattr(sys, "modules", dict(sys.modules))
+
+    entry = next(
+        x for x in entry_points()["console_scripts"] if x.name == "trello2md"
+    )  # pragma: no cover
+
+    main = entry.load()
+
+    assert main == cli.main
+
+
+def test_run_as_module(monkeypatch):
+    monkeypatch.setattr(cli, "main", lambda: 1 / 0)
+
+    with pytest.raises(ZeroDivisionError):
+        runpy.run_module("trello2md", run_name="__main__")
