@@ -1,6 +1,7 @@
 import filecmp
 import runpy
 import stat
+import subprocess
 import sys
 from importlib.metadata import entry_points
 from pathlib import Path
@@ -95,6 +96,7 @@ def test_write_board(config_file, tmp_path, monkeypatch, capsys):
 )
 def test_write_card(url, md_filename, config_file, monkeypatch, capsys):
     md_dirname = "sample-board"
+
     monkeypatch.setattr(sys, "argv", [COMMAND_NAME, url])
 
     cli.main()
@@ -106,15 +108,24 @@ def test_write_card(url, md_filename, config_file, monkeypatch, capsys):
     assert captured.out == sample_card
 
 
-def test_no_arguments(config_file, monkeypatch):
-    monkeypatch.setattr(sys, "argv", [COMMAND_NAME])
+def test_help():
+    # Using subprocess for simplicity and to smoke-test command line use
+    result = subprocess.run(["trello2md", "-h"], check=True, capture_output=True)
+    assert result.stdout.startswith(b"Export Trello boards and cards to Markdown.")
 
-    with pytest.raises(IndexError):
-        cli.main()
+
+def test_no_arguments(config_file):
+    # Using subprocess for simplicity and to smoke-test command line use
+    result = subprocess.run(["trello2md"], capture_output=True)
+    assert result.returncode > 0
+    assert result.stderr.startswith(b"Usage")
 
 
 def test_invalid_argument(config_file, monkeypatch):
     url = "https://trello.com/b"
+
+    # Not using subprocess because it doesn't measure coverage (by default)
+
     monkeypatch.setattr(sys, "argv", [COMMAND_NAME, url])
 
     with pytest.raises(ValueError, match=url):
@@ -122,6 +133,9 @@ def test_invalid_argument(config_file, monkeypatch):
 
 
 def test_console_script(monkeypatch):
+    # This is overkill with the subprocess tests, but it gives 100% branch coverage
+    # of __main__.py, and it's an interesting example of using importlib
+
     # Don't leak loaded module into other tests (esp. test_run_as_module)
     monkeypatch.setattr(sys, "modules", dict(sys.modules))
 
@@ -129,9 +143,9 @@ def test_console_script(monkeypatch):
         x for x in entry_points()["console_scripts"] if x.name == "trello2md"
     )  # pragma: no cover
 
-    main = entry.load()
+    console_script = entry.load()
 
-    assert main == cli.main
+    assert console_script == cli.main
 
 
 def test_run_as_module(monkeypatch):

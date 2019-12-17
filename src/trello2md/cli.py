@@ -1,4 +1,15 @@
-"""Export Trello boards and cards to Markdown."""
+"""Export Trello boards and cards to Markdown.
+
+Usage:
+  trello2md auth
+  trello2md <url>
+  trello2md -h | --help | --version
+
+Arguments:
+  auth      Authorize use of the Trello API
+  <url>     The URL for a Trello board or card
+
+"""
 import builtins
 import os
 import re
@@ -7,8 +18,11 @@ import sys
 from configparser import ConfigParser
 from contextlib import contextmanager
 from functools import partial
+from importlib import metadata
 from pathlib import Path
 from typing import IO, Iterator, Optional
+
+from docopt import docopt
 
 from . import api
 
@@ -18,12 +32,12 @@ CONFIG_PATH = Path.home() / ".config" / COMMAND_NAME
 
 def main() -> Optional[str]:
     """Process command line arguments."""
-    arg = sys.argv[1]
+    args = docopt(__doc__, version=metadata.version(COMMAND_NAME))
 
-    if arg == "auth":
+    if args["auth"]:
         write_credentials()
     else:
-        write_url(arg)
+        write_url(args["<url>"])
 
     return None
 
