@@ -104,7 +104,9 @@ def write_board(board: api.Board, file: Optional[IO[str]] = None) -> None:
                 write_card(card, file=file)
 
                 print(f"- [{card.name}]({file.name})", end="")
-                print(f" {meta}" if (meta := get_card_meta(card)) else "")
+                # TODO: Could the walrus operator, but it's breaking mypy
+                meta = get_card_meta(card)
+                print(f" {meta}" if meta else "")
 
 
 @contextmanager
